@@ -30,7 +30,9 @@ class MusicViewController: UIViewController {
             // load UI
             self.loadRandomSong()
         }
+        
         UIApplication.shared.beginReceivingRemoteControlEvents()
+        self.becomeFirstResponder()
         
         AudioController.sharedInstance.delegate = self
     }
@@ -114,7 +116,8 @@ class MusicViewController: UIViewController {
         MPMediaItemPropertyArtist: artistLabel.text! as String,
         MPMediaItemPropertyPlaybackDuration: String(AudioController.sharedInstance.playableDuration()),
         MPNowPlayingInfoPropertyElapsedPlaybackTime: seconds,
-        MPMediaItemPropertyArtwork:albumArtWork]
+        MPMediaItemPropertyArtwork:albumArtWork,
+        MPNowPlayingInfoPropertyPlaybackRate: 1]
     }
 
 }

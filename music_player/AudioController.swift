@@ -8,6 +8,7 @@
 
 import Foundation
 import AVFoundation
+import MediaPlayer
 import UIKit
 
 class AudioController {
@@ -30,7 +31,9 @@ class AudioController {
         if player.rate == 0 {
             player.play()
         } else {
-            player.pause()   
+            player.pause()
+            let mpic = MPNowPlayingInfoCenter.default()
+            mpic.nowPlayingInfo = [MPNowPlayingInfoPropertyPlaybackRate: 0]
         }
     }
     
