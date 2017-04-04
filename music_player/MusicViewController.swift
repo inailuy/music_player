@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class MusicViewController: UIViewController {
     @IBOutlet weak var backgroundIV: UIImageView!
@@ -29,17 +30,30 @@ class MusicViewController: UIViewController {
             // load UI
             self.loadRandomSong()
         }
+        UIApplication.shared.beginReceivingRemoteControlEvents()
         
         AudioController.sharedInstance.delegate = self
     }
     
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func remoteControlReceivedWithEvent(event: UIEvent) {
+        if event.type == .remoteControl {
+            switch (event.subtype) {
+            case .remoteControlPlay, .remoteControlPause:
+                AudioController.sharedInstance.pauseAudio()
+                break
+            case .remoteControlNextTrack:
+                loadRandomSong()
+                break
+            case .remoteControlPreviousTrack:
+                let previousSong = AudioController.sharedInstance.currentURL
+                AudioController.sharedInstance.playPreview(URLString: previousSong!)
+                break
+            default:
+                break
+            }
+        }
     }
-    
+
     //MARK: Button Actions
     @IBAction func previousButtonPressed(_ sender: Any) {
         let previousSong = AudioController.sharedInstance.currentURL
@@ -87,7 +101,15 @@ class MusicViewController: UIViewController {
         } else {
             let result = seconds / AudioController.sharedInstance.playableDuration()
             audioSlider.value = Float(result)
+            setMediaPlayer()
         }
+        
+    }
+    
+    func setMediaPlayer() {
+        let mpic = MPNowPlayingInfoCenter.default()
+        mpic.nowPlayingInfo = [MPMediaItemPropertyTitle:trackLabel.text,
+        MPMediaItemPropertyArtist:artistLabel.text]
         
     }
 
