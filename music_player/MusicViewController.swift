@@ -101,16 +101,20 @@ class MusicViewController: UIViewController {
         } else {
             let result = seconds / AudioController.sharedInstance.playableDuration()
             audioSlider.value = Float(result)
-            setMediaPlayer()
+            setMediaPlayer(seconds: Int(seconds))
         }
         
     }
     
-    func setMediaPlayer() {
-        let mpic = MPNowPlayingInfoCenter.default()
-        mpic.nowPlayingInfo = [MPMediaItemPropertyTitle:trackLabel.text,
-        MPMediaItemPropertyArtist:artistLabel.text]
+    func setMediaPlayer(seconds: Int) {
+        let albumArtWork = MPMediaItemArtwork(image: albumCoverIV.image!)
         
+        let mpic = MPNowPlayingInfoCenter.default()
+        mpic.nowPlayingInfo = [MPMediaItemPropertyTitle: trackLabel.text! as String,
+        MPMediaItemPropertyArtist: artistLabel.text! as String,
+        MPMediaItemPropertyPlaybackDuration: String(AudioController.sharedInstance.playableDuration()),
+        MPNowPlayingInfoPropertyElapsedPlaybackTime: seconds,
+        MPMediaItemPropertyArtwork:albumArtWork]
     }
 
 }
