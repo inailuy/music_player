@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		3A1054EA1E8B104800F2167D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1054E91E8B104800F2167D /* AppDelegate.swift */; };
-		3A1054EC1E8B104800F2167D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1054EB1E8B104800F2167D /* ViewController.swift */; };
+		3A1054EC1E8B104800F2167D /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1054EB1E8B104800F2167D /* MusicViewController.swift */; };
 		3A1054EF1E8B104800F2167D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1054ED1E8B104800F2167D /* Main.storyboard */; };
 		3A1054F11E8B104800F2167D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1054F01E8B104800F2167D /* Assets.xcassets */; };
 		3A1054F41E8B104800F2167D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1054F21E8B104800F2167D /* LaunchScreen.storyboard */; };
+		3A1055021E8B223F00F2167D /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1055001E8B223F00F2167D /* Spotify.swift */; };
+		3A1055041E8B229D00F2167D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1055031E8B229D00F2167D /* Model.swift */; };
+		3ACC3BF01E8B3ABC0044CD7B /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC3BEF1E8B3ABC0044CD7B /* AudioController.swift */; };
+		3ACC3BF31E8B3ADA0044CD7B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACC3BF21E8B3ADA0044CD7B /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A1054E61E8B104800F2167D /* music_player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = music_player.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A1054E91E8B104800F2167D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A1054EB1E8B104800F2167D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A1054EB1E8B104800F2167D /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		3A1054EE1E8B104800F2167D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A1054F01E8B104800F2167D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A1054F31E8B104800F2167D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A1054F51E8B104800F2167D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A1055001E8B223F00F2167D /* Spotify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
+		3A1055031E8B229D00F2167D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3ACC3BEF1E8B3ABC0044CD7B /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		3ACC3BF21E8B3ADA0044CD7B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ACC3BF31E8B3ADA0044CD7B /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,7 @@
 			children = (
 				3A1054E81E8B104800F2167D /* music_player */,
 				3A1054E71E8B104800F2167D /* Products */,
+				3ACC3BF11E8B3ADA0044CD7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +65,24 @@
 			isa = PBXGroup;
 			children = (
 				3A1054E91E8B104800F2167D /* AppDelegate.swift */,
-				3A1054EB1E8B104800F2167D /* ViewController.swift */,
+				3A1054EB1E8B104800F2167D /* MusicViewController.swift */,
+				3A1055001E8B223F00F2167D /* Spotify.swift */,
+				3A1055031E8B229D00F2167D /* Model.swift */,
+				3ACC3BEF1E8B3ABC0044CD7B /* AudioController.swift */,
 				3A1054ED1E8B104800F2167D /* Main.storyboard */,
 				3A1054F01E8B104800F2167D /* Assets.xcassets */,
 				3A1054F21E8B104800F2167D /* LaunchScreen.storyboard */,
 				3A1054F51E8B104800F2167D /* Info.plist */,
 			);
 			path = music_player;
+			sourceTree = "<group>";
+		};
+		3ACC3BF11E8B3ADA0044CD7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3ACC3BF21E8B3ADA0044CD7B /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +157,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A1054EC1E8B104800F2167D /* ViewController.swift in Sources */,
+				3ACC3BF01E8B3ABC0044CD7B /* AudioController.swift in Sources */,
+				3A1054EC1E8B104800F2167D /* MusicViewController.swift in Sources */,
+				3A1055021E8B223F00F2167D /* Spotify.swift in Sources */,
 				3A1054EA1E8B104800F2167D /* AppDelegate.swift in Sources */,
+				3A1055041E8B229D00F2167D /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +323,7 @@
 				3A1054FA1E8B104800F2167D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
